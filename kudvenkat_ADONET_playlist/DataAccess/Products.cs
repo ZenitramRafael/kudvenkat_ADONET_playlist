@@ -43,5 +43,34 @@ namespace kudvenkat_ADONET_playlist.DataAccess
                 Console.WriteLine(product.productID.ToString() + "\t" + product.name + "\t" + product.unitPrice.ToString() + "\t" + product.qtyAvailable.ToString());
             }
         }
+        public static void UpdateProduct(int productID, string column, string newValue, out string message)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("UPDATE Example.dbo.kudvenkat_ADONET_playlist_tblProduct SET " + column + " = '" + newValue + "' WHERE ProductID = " + productID.ToString(), connection))
+                {
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+                    message = "Success: Total Rows affected = " + rowsAffected.ToString();
+                }
+
+            }
+        }
+
+        //
+        // Summary:
+        //     Adds a Product to the database given a Product.
+        public static void AddProduct(Product product, out string message)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO Example.dbo.kudvenkat_ADONET_playlist_tblProduct VALUES ( '" + product.name + "', " + product.unitPrice + ", " + product.qtyAvailable + ")", connection))
+                {
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+                    message = "Product entered: " + product.name + "; Rows affected: " + rowsAffected.ToString();
+                }
+            }
+        }
     }
 }
