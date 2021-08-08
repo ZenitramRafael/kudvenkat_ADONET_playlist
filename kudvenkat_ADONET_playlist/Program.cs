@@ -33,11 +33,35 @@ namespace kudvenkat_ADONET_playlist
 
         static void SPRead()
         {
-            Console.WriteLine("Hello World! \nHere are all the products:");
-            PrintProducts();
-            PrintProducts("stored procedure");
-            PrintProducts("p");
-            PrintProducts("sp");
+            string response = GetUserInput("Would you like to insert an Employee? Type Yes. Type no to see Products. ");
+            string message;
+            switch (response)
+            {
+                case "no":
+                    Console.WriteLine("Hello World! \nHere are all the products:");
+                    PrintProducts();
+                    PrintProducts("stored procedure");
+                    PrintProducts("p");
+                    PrintProducts("sp");
+                    break;
+                case "yes":
+                    Employees.InsertEmployee(InsertEmployee(), out message);
+                    Console.WriteLine(message);
+                    break;
+            }
+        }
+
+        private static Employee InsertEmployee()
+        {
+            Employee employee = new Employee
+            {
+                name = GetUserInput("What is the name of the Employee being inserted? ")
+                ,
+                gender = GetUserInput("What is the gender of the Employee being inserted? ")
+                ,
+                salary = int.Parse(GetUserInput("What is the salary of the Employee being inserted? "))
+            };
+            return employee;
         }
 
         static void BasicCRUD()
