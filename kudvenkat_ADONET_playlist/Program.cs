@@ -11,7 +11,7 @@ namespace kudvenkat_ADONET_playlist
             Console.WriteLine("Hello World! \nHere are all the products:");
             PrintProducts();
 
-            string response = GetUserInput("Would you like to Add or Modify a record? If yes, type Add or Modify to contiue. Else, type ReturnAll: ");
+            string response = GetUserInput("Would you like to Add, Modify, or Delete a record? If yes, type Add or Modify to contiue. Else, type ReturnAll: ");
 
             string message;
             while (response != "end")
@@ -33,6 +33,10 @@ namespace kudvenkat_ADONET_playlist
                         Products.UpdateProduct(productID, column, newValue, out message);
                         Console.WriteLine(message);
                         PrintProducts();
+                        break;
+                    case "delete":
+                        DeleteProduct(out message);
+                        Console.WriteLine(message);
                         break;
                     case "returnall":
                         Console.Clear();
@@ -77,6 +81,20 @@ namespace kudvenkat_ADONET_playlist
             column = GetUserInput("Type the name of the column you want to modify: ");
             newValue = GetUserInput("Type the value you want instead of what is already there: ");
 
+        }
+
+        static void DeleteProduct(out string message)
+        {
+            int productID = int.Parse(GetUserInput("What is the ProductID of the record you are trying to delete? "));
+            string response = GetUserInput("Are you sure you want to delete this record: ProductID = " + productID.ToString() + "\nType Yes.");
+            if (response == "yes")
+            {
+                Products.DeleteProduct(productID, out message);
+            }
+            else
+            {
+                message = "No records deleted.";
+            }
         }
     }
 }

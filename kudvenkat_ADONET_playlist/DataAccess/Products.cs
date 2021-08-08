@@ -72,5 +72,20 @@ namespace kudvenkat_ADONET_playlist.DataAccess
                 }
             }
         }
+
+        public static void DeleteProduct(int productID, out string message)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand sqlDeleteCommand = new SqlCommand("DELETE FROM Example.dbo.kudvenkat_ADONET_playlist_tblProduct WHERE ProductID = '" + productID + "'", connection))
+                {
+                    SqlCommand sqlGetNameCommand = new SqlCommand("SELECT Name FROM Example.dbo.kudvenkat_ADONET_playlist_tblProduct WHERE ProductID = '" + productID + "'", connection);
+                    string productName = sqlGetNameCommand.ExecuteScalar().ToString();
+                    int rowsAffected = sqlDeleteCommand.ExecuteNonQuery();
+                    message = "Product Removed: " + productName + "; Rows affected: " + rowsAffected.ToString();
+                }
+            }
+        }
     }
 }
