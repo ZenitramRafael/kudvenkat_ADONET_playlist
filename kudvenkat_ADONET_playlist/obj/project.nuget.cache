@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "3iq1QyrM869RKMQWVqW5aTildLeXw8+6gPw9DUS5qfmeipfct4PwO4VNEI+dRWauFIBzvHsKXwKfydjFx/VGSA==",
+  "dgSpecHash": "AfqohpZzg/yu/VYMIpjbS0/B/XUZDSX2al9Z1mLJpIrGfrDi5XedTwMC1yXGOMedXg5Wdtwm3N54451ZIQv0ZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\kudvenkat_ADONET_playlist\\kudvenkat_ADONET_playlist\\kudvenkat_ADONET_playlist.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\zenit\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\zenit\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\zenit\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\zenit\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

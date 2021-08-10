@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using kudvenkat_ADONET_playlist.DataAccess;
 using kudvenkat_ADONET_playlist.Model;
 
@@ -34,15 +35,15 @@ namespace kudvenkat_ADONET_playlist
 
         static void SPRead()
         {
-            string response = GetUserInput("Would you like to insert an Employee? Type Yes. Type no to see Products. ");
+            string response = GetUserInput("Would you like to insert an Employee? Type Yes. Type All to see to All Employees. ");
             string message;
             switch (response)
             {
-                case "no":
-                    response = GetUserInput("Would you like to use dataset object to save the data?").ToLower();
+                case "all":
+                    response = GetUserInput("Would you like to see how//if cache works? Type Products to see Products").ToLower();
                     switch (response)
                     {
-                        case "no":
+                        case "products":
                             Console.WriteLine("Hello World! \nHere are all the products:");
                             PrintProducts();
                             PrintProducts("stored procedure");
@@ -50,7 +51,14 @@ namespace kudvenkat_ADONET_playlist
                             PrintProducts("sp");
                             break;
                         case "yes":
-                            PrintEmployees(Employees.GetEmployees());
+                            Console.Clear();
+                            //string isCached;
+                            PrintEmployees(Employees.GetEmployees(/*out isCached*/));
+                            //Console.WriteLine(isCached);
+                            Employees.InsertEmployee(InsertEmployee(), out message);
+                            Console.WriteLine(message);
+                            PrintEmployees(Employees.GetEmployees(/*out isCached*/));
+                            //Console.WriteLine(isCached);
                             break;
                     }
                     

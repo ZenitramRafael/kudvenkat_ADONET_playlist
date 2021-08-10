@@ -21,3 +21,9 @@ C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADO
 C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\obj\Debug\net5.0\ref\kudvenkat_ADONET_playlist.dll
 C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\obj\Debug\net5.0\kudvenkat_ADONET_playlist.pdb
 C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\obj\Debug\net5.0\kudvenkat_ADONET_playlist.genruntimeconfig.cache
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\zenit\OneDrive\Documents\GitHub\kudvenkat_ADONET_playlist\kudvenkat_ADONET_playlist\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
