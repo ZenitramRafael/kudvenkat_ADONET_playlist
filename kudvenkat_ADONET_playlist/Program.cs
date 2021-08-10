@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using kudvenkat_ADONET_playlist.DataAccess;
 using kudvenkat_ADONET_playlist.Model;
 
@@ -38,11 +39,21 @@ namespace kudvenkat_ADONET_playlist
             switch (response)
             {
                 case "no":
-                    Console.WriteLine("Hello World! \nHere are all the products:");
-                    PrintProducts();
-                    PrintProducts("stored procedure");
-                    PrintProducts("p");
-                    PrintProducts("sp");
+                    response = GetUserInput("Would you like to use dataset object to save the data?").ToLower();
+                    switch (response)
+                    {
+                        case "no":
+                            Console.WriteLine("Hello World! \nHere are all the products:");
+                            PrintProducts();
+                            PrintProducts("stored procedure");
+                            PrintProducts("p");
+                            PrintProducts("sp");
+                            break;
+                        case "yes":
+                            PrintEmployees(Employees.GetEmployees());
+                            break;
+                    }
+                    
                     break;
                 case "yes":
                     Employees.InsertEmployee(InsertEmployee(), out message);
@@ -51,18 +62,7 @@ namespace kudvenkat_ADONET_playlist
             }
         }
 
-        private static Employee InsertEmployee()
-        {
-            Employee employee = new Employee
-            {
-                name = GetUserInput("What is the name of the Employee being inserted? ")
-                ,
-                gender = GetUserInput("What is the gender of the Employee being inserted? ")
-                ,
-                salary = int.Parse(GetUserInput("What is the salary of the Employee being inserted? "))
-            };
-            return employee;
-        }
+
 
         static void BasicCRUD()
         {
@@ -107,6 +107,31 @@ namespace kudvenkat_ADONET_playlist
             }
         }
 
+        #region Methods for Employees
+        private static Employee InsertEmployee()
+        {
+            Employee employee = new Employee
+            {
+                name = GetUserInput("What is the name of the Employee being inserted? ")
+                ,
+                gender = GetUserInput("What is the gender of the Employee being inserted? ")
+                ,
+                salary = int.Parse(GetUserInput("What is the salary of the Employee being inserted? "))
+            };
+            return employee;
+        }
+
+        private static void PrintEmployees(IEnumerable<Employee> employees)
+        {
+            Console.WriteLine("EmployeeID\tName\tGender\tSalary");
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee.employeeId + "\t" + employee.name + "\t" + employee.gender + "\t" + employee.salary);
+            }
+            Console.WriteLine("Employees printed from dataSet.");
+        }
+
+        #endregion
 
         #region Methods for all runs (Basic and StoredProcedure)
         static string GetUserInput(string label)
